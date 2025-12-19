@@ -1,0 +1,230 @@
+:root{
+  --bg: #071f44;
+  --card-bg: #ffffff;
+  --surface: #f0f4f8;
+  --text: #0f1724;
+  --muted: #6b7280;
+  --accent: #2563eb;     
+  --accent-weak: #e6f0ff;
+  --radius: 12px;
+  --max-width: 880px;
+  --gap: 1rem;
+  --container-padding: 1.25rem;
+  --shadow: 0 8px 24px rgba(15,23,42,0.06);
+  --transition: 180ms ease;
+  --focus-ring: 3px rgba(37,99,235,0.18);
+  --font-system: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+
+* { box-sizing: border-box; }
+html,body { height: 100%; }
+body{
+  margin: 0;
+  font-family: var(--font-system);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.container{
+  width: 100%;
+  max-width: var(--max-width);
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: var(--container-padding);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(15,23,42,0.03);
+}
+
+.site-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap);
+  margin-bottom: 0.6rem;
+}
+
+.site-title{
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+
+/*navigation bar */
+
+.main-nav{
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.nav-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.nav-link:hover,
+.nav-link:focus{
+  background: var(--accent-weak);
+  transform: translateY(-2px);
+  outline: none;
+  box-shadow: 0 6px 18px rgba(37,99,235,0.06);
+}
+
+.nav-link:focus{
+  box-shadow: 0 0 0 6px var(--focus-ring);
+  border-color: rgba(37,99,235,0.12);
+}
+
+a{
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.profile-top{
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.avatar{
+  width: 180px;
+  height: 180px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(2,6,23,0.08);
+  border: 1px solid rgba(2,6,23,0.04);
+  display: block;
+}
+
+.profile-info p,
+.contact-section p,
+.connect-section p{
+  margin: 0.35rem 0;
+  font-size: 0.98rem;
+}
+.profile-info strong { font-weight: 700; color: var(--text); }
+
+hr{
+  border: 0;
+  border-top: 1px solid rgba(15,23,42,0.06);
+  margin: 0.85rem 0;
+}
+
+h2{
+  margin: 0.5rem 0 0.35rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+dl{ margin: 0; }
+dt{ font-weight: 700; margin-top: 0.35rem; }
+dd{ margin: 0 0 0.6rem 0.5rem; color: var(--muted); }
+
+.experience-table{
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.6rem;
+  background: transparent;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.experience-table thead th{
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.6rem 0.75rem;
+  background: var(--surface);
+  color: var(--text);
+  border-bottom: 1px solid rgba(15,23,42,0.06);
+}
+.experience-table td{
+  padding: 0.65rem 0.75rem;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(15,23,42,0.04);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.experience-table tbody tr:hover td{
+  background: rgba(37,99,235,0.02);
+}
+
+.connect-links{
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.25rem 0;
+}
+.sep{ color: var(--muted); }
+
+small{ color: var(--muted); font-size: 0.85rem; }
+
+:focus{
+  outline: none;
+}
+a:focus, button:focus, .nav-link:focus{
+  outline: none;
+  box-shadow: 0 0 0 6px var(--focus-ring);
+}
+
+.quote-card{
+  margin-top: 0.6rem;
+}
+.quote-text{
+  margin-top: 0.4rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* helper for hiding elements */
+.hidden { display: none !important; }
+
+/* Dark mode variables when body has class .dark-mode */
+body.dark-mode {
+  --bg: #020617;
+  --card-bg: #07122b;
+  --surface: #071a2b;
+  --text: #e6eef9;
+  --muted: #bfc9d6;
+  --accent: #60a5fa;
+  --accent-weak: rgba(96,165,250,0.06);
+  --shadow: 0 8px 24px rgba(0,0,0,0.5);
+  --focus-ring: 3px rgba(96,165,250,0.12);
+}
+
+/* small responsive and accessibility tweaks */
+@media (prefers-reduced-motion: reduce){
+  * { transition: none !important; animation: none !important; }
+}
+
+@media (max-width: 720px){
+  body { padding: 1.5rem 0.8rem; }
+  .container{ padding: 1rem; }
+  .profile-top{ grid-template-columns: 1fr; grid-auto-rows: auto; gap: 0.6rem; }
+  .avatar{ width: 140px; height: 140px; border-radius: 12px; margin: 0 auto; }
+  .site-title{ font-size: 1.1rem; }
+  .nav-link{ padding: 0.3rem 0.6rem; font-size: 0.92rem; }
+  .experience-table thead th, .experience-table td{ padding: 0.5rem 0.5rem; }
+}

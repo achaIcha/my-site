@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profile ni cha 🦖 | WEBPROG Midterm</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <main class="container" role="main">
+    <header class="site-header" aria-label="Profile header">
+      <h1 class="site-title">Profile ni cha 🦖</h1>
+
+      <!-- Theme toggle placed with nav -->
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="nav-link" href="#intro">Introduction</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#connect">Connect</a>
+        <button id="themeBtn" class="nav-link" type="button">Toggle Dark Mode</button>
+      </nav>
+    </header>
+
+    <section class="profile-top" aria-labelledby="profile-heading">
+      <img src="saldu.jpg" alt="Ashley Charmaine R. Saldo — profile photo" class="avatar" width="180" height="180">
+      <div class="profile-info">
+        <h2 id="profile-heading" class="visually-hidden">Profile Information</h2>
+        <p><strong>Name:</strong> <span>Ashley Charmaine R. Saldo</span></p>
+        <p><strong>Job Title:</strong> <span id="job-title">Student</span>
+          <button id="editJobBtn" type="button">Edit Job Title</button>
+        </p>
+        <p><strong>Email:</strong> <a href="mailto:charmainesaldo14@gmail.com">charmainesaldo14@gmail.com</a></p>
+        <p><strong>Location:</strong> <span>Caloocan City</span></p>
+      </div>
+    </section>
+
+    <hr>
+
+    <section id="intro" aria-labelledby="intro-heading">
+      <h2 id="intro-heading">Personal Introduction</h2>
+      <p>
+        Hello! I'm Ashley, a passionate person with a variety of interests, eager to learn new things and solve interesting problems with creative solutions. I believe that I have the ability to do anything and I consider it as a gift, even if I struggle to find what I am really good at.
+      </p>
+    </section>
+
+    <hr>
+
+    <section id="contact" class="contact-section" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact Me</h2>
+      <p><strong>Contact Number:</strong> <a href="tel:+639958747200">0995 874 7200</a></p>
+      <p><strong>Email:</strong> <a href="mailto:charmainesaldo14@gmail.com">charmainesaldo14@gmail.com</a></p>
+      <p><strong>Facebook:</strong> <span>Ashley Saldo</span></p>
+
+      <h2 id="contact-heading">Have a message?</h2>
+      <form action="#" method="post" class="contact-form" id="contactForm" novalidate>
+        <div class="form-group">
+          <label for="user-name">Your Name:</label>
+          <input type="text" id="user-name" name="user-name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="user-email">Your Email:</label>
+          <input type="email" id="user-email" name="user-email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="user-message">Message</label>
+          <textarea id="user-message" name="user-message" rows="4" maxlength="200" required></textarea>
+          <p>Characters left: <span id="counter">200</span></p>
+        </div>
+
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </section>
+
+    <hr>
+
+    <section id="skills" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills
+        <button id="toggleSkillsBtn" type="button">Hide Skills</button>
+      </h2>
+
+      <div id="skillsSection">
+        <dl>
+          <dt>Programming Languages</dt>
+          <dd>Python, Java</dd>
+
+          <dt>Web Development</dt>
+          <dd>HTML, CSS</dd>
+
+          <dt>Other Skills</dt>
+          <dd>Playing musical instruments, Playing sports, Dancing, Singing, Cooking</dd>
+        </dl>
+      </div>
+    </section>
+
+    <hr>
+
+    <section id="experience" aria-labelledby="experience-heading">
+      <h2 id="experience-heading">Experience &amp; Achievements</h2>
+      <table class="experience-table" aria-describedby="experience-heading">
+        <thead>
+          <tr>
+            <th scope="col">Year</th>
+            <th scope="col">Role</th>
+            <th scope="col">Organization</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2022-Present</td>
+            <td>Barista</td>
+            <td>Kopi Haus</td>
+            <td>Created the logo, made drinks, cooked food, processed customer orders.</td>
+          </tr>
+          <tr>
+            <td>2025-2026</td>
+            <td>Technical Committee Head</td>
+            <td>Codability Tech</td>
+            <td>Contributed org event ideas, handled technical aspects of certain events, led a committee.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr>
+
+    <section id="connect" class="connect-section" aria-labelledby="connect-heading">
+      <h2 id="connect-heading">Connect with Me</h2>
+      <p class="connect-links">
+        <a href="https://github.com/achaachaa" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <span class="sep">|</span>
+        <a href="https://www.linkedin.com/in/charmaine-saldo-021ba82a6" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </p>
+
+      <!-- Extra feature: Random Quote Generator -->
+      <div class="quote-card" aria-live="polite">
+        <button id="quoteBtn" type="button">Show a Motivational Quote</button>
+        <p id="quoteDisplay" class="quote-text" aria-atomic="true"></p>
+      </div>
+    </section>
+
+    <hr>
+
+    <footer>
+      <p><small>Last updated: <span id="dateDisplay"></span></small></p>
+    </footer>
+  </main>
+  
+</body>
+</html>
